@@ -45,12 +45,6 @@ def recommend_items(userID):
 from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
-@app.route('/')
-def home():
-    try:
-        return render_template("index.html")
-    except Exception as e:
-        return f"Error rendering template: {e}", 500
 
 @app.route('/recommend', methods=['GET'])
 def recommend():
